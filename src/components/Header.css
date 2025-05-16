@@ -1,0 +1,119 @@
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+  background-color: teal;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.header--scrolled {
+  background-color: teal;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  height: 200px;
+  width: auto;
+  transition: all 0.3s ease-in-out;
+  object-fit: contain;
+  margin-top: -40px;
+  margin-bottom: -50px;
+}
+
+.header--scrolled .logo {
+  height: 200px;
+}
+
+.desktop-nav {
+  display: flex;
+  gap: 20px;
+}
+
+.desktop-nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1rem;
+}
+
+.desktop-nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.0rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.desktop-nav ul li a:hover {
+  color: #f0f0f0;
+}
+
+.desktop-nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.desktop-nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Mobile menu styles */
+.MuiDrawer-paper {
+  background-color: #333 !important;
+}
+
+.MuiListItemText-primary {
+  color: white !important;
+  font-size: 1.2rem !important;
+  font-weight: 500 !important;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .logo {
+    height: 150px;
+    margin-top: -25px;
+    margin-bottom: -25px;
+  }
+  
+  .header--scrolled .logo {
+    height: 150px;
+  }
+  
+  .desktop-nav ul li a {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .desktop-nav {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    height: 120px;
+    margin-top: -10px;
+    margin-bottom: -10px;
+  }
+  
+  .header--scrolled .logo {
+    height: 120px;
+  }
+}
+

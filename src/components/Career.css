@@ -1,0 +1,122 @@
+.careers-container {
+  margin-top: 10px;
+  padding: 0 20px;
+}
+
+.job-opening-section .section-title {
+  text-decoration: underline;
+  color: teal;
+  text-align: center;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+.job-description {
+  margin-top: 30px;
+  text-align: justify;
+  line-height: 1.6;
+}
+
+.qualifications-section .section-title {
+  text-align: center;
+  font-size: 1.5em;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.qualities-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+}
+
+.qualities-list li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: calc(33.33% - 20px);
+  margin-bottom: 20px;
+}
+
+.equal-size-logo {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.view-and-apply-section .section-subtitle {
+  text-align: center;
+  text-decoration: underline;
+  color: orange;
+  font-size: 1.3em;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.career-opening {
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+@media screen and (max-width: 768px) {
+  .careers-container {
+    margin-top: 10px;
+  }
+
+  .job-opening-section .section-title {
+    font-size: 1.5em;
+  }
+
+  .job-description {
+    margin-top: 20px;
+  }
+
+  .qualifications-section .section-title {
+    font-size: 1.3em;
+    margin-top: 30px;
+  }
+
+  .qualities-list li {
+    width: calc(50% - 20px);
+  }
+
+  .equal-size-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .view-and-apply-section .section-subtitle {
+    font-size: 1.1em;
+    margin-top: 30px;
+  }
+
+  .career-opening {
+    margin-top: 15px;
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .careers-container {
+    padding: 0 10px;
+  }
+
+  .job-opening-section .section-title {
+    font-size: 1.3em;
+  }
+
+  .qualities-list li {
+    width: 100%;
+  }
+
+  .view-and-apply-section .section-subtitle {
+    font-size: 1em;
+  }
+}

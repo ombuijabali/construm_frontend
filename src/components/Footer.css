@@ -1,0 +1,89 @@
+.footer {
+  background-color: teal;
+  color: white;
+  padding: 20px 0;
+  font-size: 16px; /* Adjusted for better readability */
+}
+
+.footer h5 {
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: rgb(7, 1, 1); /* Ensure headings are clearly visible */
+}
+
+.footer p {
+  margin: 0 0 10px;
+  text-align: justify;
+  color: lightgray; /* Improved text color for readability */
+}
+
+.footer .list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+.footer .list-unstyled li {
+  margin-bottom: 10px;
+}
+
+.footer .list-unstyled li a {
+  color: white; /* Changed to white for better contrast */
+  text-decoration: none;
+}
+
+.footer .list-unstyled li a:hover {
+  text-decoration: underline;
+  color: orange;
+}
+
+.footer .back-to-top-link {
+  color: orange;
+  text-decoration: none;
+}
+
+.footer .back-to-top-link:hover {
+  text-decoration: underline;
+}
+
+.footer .social-icons a {
+  color: white; /* Made icons white for better contrast */
+  font-size: 1.5em;
+  margin-right: 10px;
+}
+
+.social-icons a:hover {
+  color: orange; /* Hover effect to make icons stand out */
+}
+
+.partner-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center; /* Center-align the logos */
+}
+
+.partner-logo {
+  margin: 0 10px;
+  height: 50px;
+}
+
+.partner-heading {
+  margin-right: 15px;
+  margin-left: 15px; /* Reduced margin for better spacing */
+  font-weight: bold;
+  color: white;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer {
+  margin-top: auto;
+}
+
+.container {
+  padding-bottom: 100px;
+}
