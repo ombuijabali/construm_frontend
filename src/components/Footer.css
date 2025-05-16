@@ -1,8 +1,7 @@
 .footer {
   background-color: teal;
-  color: white;
-  padding: 20px 0;
-  font-size: 16px; /* Adjusted for better readability */
+  color: #333;
+  padding: 40px 0 20px;
 }
 
 .footer h5 {
@@ -55,23 +54,61 @@
   color: orange; /* Hover effect to make icons stand out */
 }
 
+.partner-heading {
+  color: teal;
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.partner-logos-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
 .partner-logos {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  justify-content: center; /* Center-align the logos */
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 .partner-logo {
-  margin: 0 10px;
-  height: 50px;
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
 }
 
-.partner-heading {
-  margin-right: 15px;
-  margin-left: 15px; /* Reduced margin for better spacing */
-  font-weight: bold;
-  color: white;
+.partner-logo:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .partner-logos {
+    gap: 20px;
+  }
+  
+  .partner-logo {
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .partner-logos {
+    gap: 15px;
+  }
+  
+  .partner-logo {
+    height: 35px;
+  }
 }
 
 body {

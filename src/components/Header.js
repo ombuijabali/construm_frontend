@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
@@ -52,11 +51,11 @@ const Header = () => {
           { label: 'Contact', path: '/contact' } // Fixed path to '/contact'
         ].map((item) => (
           <ListItem
-            button
             component={Link}
-            to={item.path}  // Correct path
+            to={item.path}
             onClick={handleDrawerToggle}
             key={item.label}
+            sx={{ textDecoration: 'none' }}
           >
             <ListItemText primary={item.label} />
           </ListItem>

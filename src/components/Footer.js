@@ -7,6 +7,8 @@ import { faTwitter, faLinkedin, faYoutube } from '@fortawesome/free-brands-svg-i
 import './Footer.css';
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="footer py-4 mt-5">
       <div className="container">
@@ -20,7 +22,7 @@ const Footer = () => {
             </p>
             <br />
             <br />
-            <p>&copy; 2024 Construm Geosystems. All rights reserved.</p>
+            <p>&copy; {currentYear} Construm Geosystems. All rights reserved.</p>
           </div>
 
           {/* Footer Widgets Column 2 */}
@@ -30,8 +32,6 @@ const Footer = () => {
               <li><Link to="/">Home</Link></li>
               <li><Link to="/about">About Us</Link></li>
               <li><Link to="/services">Services</Link></li>
-              <li><Link to="/blogs">Blog</Link></li>
-              <li><Link to="/projects">Projects</Link></li>
               <li><Link to="/career">Careers</Link></li>
             </ul>
             <br />
@@ -45,11 +45,11 @@ const Footer = () => {
               <li>
                 <strong><FontAwesomeIcon icon={faMapMarkerAlt} /> Gateway Mall</strong><br />
                 3rd Floor Room 22<br />
-                Kiungani Rd<br />
+                Mombasa Rd<br />
                 Nairobi, Kenya
               </li>
               <li>
-                <strong><FontAwesomeIcon icon={faEnvelope} /> <a href="mailto:simion7ombui@gmail.com" style={{color: 'orange'}}>simion7ombui@gmail.com</a></strong>
+                <strong><FontAwesomeIcon icon={faEnvelope} /> <a href="mailto:construmgis@gmail.com" style={{color: 'orange'}}>construmgis@gmail.com</a></strong>
               </li>
               <li>
                 <strong><FontAwesomeIcon icon={faPhone} /> <a href="tel:+254706881849" style={{color: 'orange'}}>+254 706 881 849</a></strong>
@@ -58,7 +58,7 @@ const Footer = () => {
 
             <div className="social-icons">         
               <a href="https://x.com/OmbuiSimio27785" className="mr-3" style={{ color: '#1DA1F2' }}><FontAwesomeIcon icon={faTwitter} /></a>
-              <a href="https://www.linkedin.com/in/simion-ombui-6b13a9178/" className="mr-3" style={{ color: 'blue' }}><FontAwesomeIcon icon={faLinkedin} /></a>
+              <a href="https://www.linkedin.com/company/construmgis/?viewAsMember=true" className="mr-3" style={{ color: 'blue' }}><FontAwesomeIcon icon={faLinkedin} /></a>
               <a href="https://www.youtube.com/@construmgis" className="mr-3" style={{ color: '#FF0000' }}><FontAwesomeIcon icon={faYoutube} /></a>
               {/* Add more social media icons and links as needed */}
             </div>
@@ -67,17 +67,21 @@ const Footer = () => {
       </div>
 
       {/* Partner Logos Section */}
-      <div className="col-md-12 mt-4 d-flex align-items-center">
-        <h5 className="partner-heading">Our Partners:</h5>
-        <div className="partner-logos">
-          <img src="images/gok.png" alt="Partner Logo 1" className="partner-logo" />
-          <img src="images/kura.png" alt="Partner Logo 2" className="partner-logo" />
-          <img src="images/nema.png" alt="Partner Logo 3" className="partner-logo" />
-          <img src="images/ngo.jpeg" alt="Partner Logo 3" className="partner-logo" />
-          <img src="images/upwork.png" alt="Partner Logo 4" className="partner-logo" />
-          <img src="images/ConstrumGIS.png" alt="Partner Logo 4" className="partner-logo" />
-          {/* Add more partner logos as needed */}
-          
+      <div className="partners-section">
+        <div className="container">
+          <div className="partners-content">
+            <h5 className="partner-heading">Our Partners</h5>
+            <div className="partner-logos-container">
+              <div className="partner-logos">
+                <img src="/images/gok.png" alt="Government of Kenya" className="partner-logo" />
+                <img src="/images/kura.png" alt="KURA" className="partner-logo" />
+                <img src="/images/nema.png" alt="NEMA" className="partner-logo" />
+                <img src="/images/ngo.jpeg" alt="NGO" className="partner-logo" />
+                <img src="/images/upwork.png" alt="Upwork" className="partner-logo" />
+                <img src="/images/fiver.png" alt="ConstrumGIS" className="partner-logo" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

@@ -27,7 +27,7 @@ const Contact = () => {
   return (
     <main>
       <div className="container mb-6">
-        <h2 style={{ color: 'orange' }}>Talk To Us</h2>
+        <h2 style={{ color: 'teal' }}>Talk To Us</h2>
         <div className="row">
           <div className="col-md-8">
             {/* Contact Form */}
@@ -85,15 +85,15 @@ const Contact = () => {
           </div>
           <div className="col-md-4">
             {/* Contact Details */}
-            <h3 style={{ color: 'orange' }}>Contact Details</h3>
+            <h3 style={{ color: 'teal' }}>Contact Details</h3>
             <p><strong>Phone:</strong> +254 (706 881 849)</p>
             <p><strong>Phone:</strong> +254 (714 998651)</p>
-            <p><strong>Email:</strong> simion7ombui@gmail.com</p>
+            <p><strong>Email:</strong> construmgis@gmail.com</p>
             <h3>Follow Us</h3>
             <a href="https://x.com/OmbuiSimio27785" className="btn btn-outline-primary btn-social-icon btn-twitter mr-2">
               <FontAwesomeIcon icon={['fab', 'twitter']} />
             </a>
-            <a href="https://www.linkedin.com/in/simion-ombui-6b13a9178/" className="btn btn-outline-primary btn-social-icon btn-linkedin mr-2">
+            <a href="https://www.linkedin.com/company/construmgis/?viewAsMember=true" className="btn btn-outline-primary btn-social-icon btn-linkedin mr-2">
               <FontAwesomeIcon icon={['fab', 'linkedin']} />
             </a>
             <a href="https://www.youtube.com/@construmgis" className="btn btn-outline-primary btn-social-icon btn-youtube mr-2">
@@ -107,16 +107,17 @@ const Contact = () => {
       <div className="container">
         <div className="row">
           <div className="col-md-12">
-            <h2 style={{ color: 'orange' }}>Our Location</h2>
+            <h2 style={{ color: 'teal' }}>Our Location</h2>
             {/* Google Maps iframe embed code */}
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.2765184837125!2d-122.08284708481081!3d37.421999979824946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fbc9b59b54769%3A0x92bd76552a0d59e7!2sGolden%20Gate%20Bridge!5e0!3m2!1sen!2sus!4v1612851040955!5m2!1sen!2sus"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7614097666584!2d36.87752731475547!3d-1.3294344990342854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f11b6e8be0b57%3A0x85208a2ec9397f89!2sGateway%20Mall!5e0!3m2!1sen!2ske!4v1679901234567!5m2!1sen!2ske"
               width="100%"
               height="400"
               style={{ border: '0' }}
               allowFullScreen
               loading="lazy"
-              title="Google Maps Location"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Gateway Mall Location"
             ></iframe>
           </div>
         </div>

@@ -1,9 +1,33 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
 import './Home.css';
 
 const Home = () => {
+  const [latestVideo, setLatestVideo] = useState('qs7GSDrxpDA'); // Default video ID
+  const channelId = 'UCYb6v1AlX6oNhgvxWksX4Pw'; // Replace with your actual channel ID
+  const apiKey = process.env.REACT_APP_YOUTUBE_API_KEY;
+
+  useEffect(() => {
+    const fetchLatestVideo = async () => {
+      try {
+        const response = await fetch(
+          `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=1`
+        );
+        const data = await response.json();
+        if (data.items && data.items[0]) {
+          setLatestVideo(data.items[0].id.videoId);
+        }
+      } catch (error) {
+        console.error('Error fetching latest video:', error);
+      }
+    };
+
+    if (apiKey) {
+      fetchLatestVideo();
+    }
+  }, [apiKey]);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -32,8 +56,8 @@ const Home = () => {
           </div>
         </Slider>
         <div className="hero-text">
-        <h1 class="white-text">Geospatial Technology, Geospatial Solutions</h1>
-          <p class="white-text">Your trusted partner in geospatial consultancy services.</p>
+          <h1 className="white-text">Geospatial Technology, Geospatial Solutions</h1>
+          <p className="white-text">Your trusted partner in geospatial consultancy services.</p>
           <Link to="/contact" className="btn cta-btn">Contact Us</Link>
         </div>
       </section>
@@ -43,7 +67,7 @@ const Home = () => {
         <div className="services-list">
           
           <div className="service-item">
-            <i className="fas fa-map-marked-alt service-icon"></i> {/* GIS and Mapping Icon */}
+            <i className="fas fa-map-marked-alt service-icon gis-icon"></i>
             <h3>GIS and Mapping</h3>
             <p>
               Our GIS and Mapping services provide comprehensive spatial analysis and mapping solutions. We use advanced GIS technology to create accurate and visually compelling maps, enhancing decision-making across various industries.
@@ -52,7 +76,7 @@ const Home = () => {
           </div>
 
           <div className="service-item">
-            <i className="fas fa-satellite service-icon"></i> {/* Remote Sensing Icon */}
+            <i className="fas fa-satellite service-icon remote-sensing-icon"></i>
             <h3>Remote Sensing</h3>
             <p>
               Leverage satellite and aerial imaging technologies for high-resolution data capture. Our Remote Sensing services are essential for environmental monitoring, land use assessment, and detailed surveys without on-ground presence.
@@ -61,7 +85,7 @@ const Home = () => {
           </div>
 
           <div className="service-item">
-            <i className="fas fa-code service-icon"></i> {/* Software Development Icon */}
+            <i className="fas fa-code service-icon software-icon"></i>
             <h3>Geospatial Software Development</h3>
             <p>
               We develop custom geospatial software solutions to manage, analyze, and visualize spatial data effectively. Enhance your GIS capabilities with tools tailored to your organization's needs.
@@ -70,7 +94,7 @@ const Home = () => {
           </div>
 
           <div className="service-item">
-            <i className="fas fa-map service-icon"></i> {/* Cartography Icon */}
+            <i className="fas fa-map service-icon cartography-icon"></i>
             <h3>Cartography</h3>
             <p>
               Our Cartography services produce visually stunning and informative maps. Whether you need thematic or topographic maps, we deliver high-quality products that effectively communicate spatial information.
@@ -79,7 +103,7 @@ const Home = () => {
           </div>
 
           <div className="service-item">
-            <i className="fas fa-chart-bar service-icon"></i> {/* Data Science Icon */}
+            <i className="fas fa-chart-bar service-icon data-science-icon"></i>
             <h3>Data Science and Analysis</h3>
             <p>
               Transform raw spatial data into actionable insights with our Data Science services. We apply advanced analytical techniques, enabling informed decisions based on comprehensive data analysis.
@@ -88,7 +112,7 @@ const Home = () => {
           </div>
 
           <div className="service-item">
-            <i className="fas fa-plane service-icon"></i> {/* Drone Mapping Icon */}
+            <i className="fas fa-plane service-icon drone-icon"></i>
             <h3>Drone Mapping</h3>
             <p>
               Obtain high-resolution aerial imagery and 3D models with our Drone Mapping services. Essential for detailed site analysis, construction planning, and environmental monitoring using state-of-the-art drone technology.
@@ -121,7 +145,7 @@ const Home = () => {
           <iframe
             width="100%"
             height="500"
-            src="https://www.youtube.com/embed/qs7GSDrxpDA"
+            src={`https://www.youtube.com/embed/${latestVideo}`}
             title="Latest ConstrumGIS Video"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
