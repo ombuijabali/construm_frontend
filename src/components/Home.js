@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
 import './Home.css';
+import AdSense from './AdSense';
 
 const Home = () => {
   const [latestVideo, setLatestVideo] = useState('qs7GSDrxpDA'); // Default video ID
@@ -61,6 +62,9 @@ const Home = () => {
           <Link to="/contact" className="btn cta-btn">Contact Us</Link>
         </div>
       </section>
+
+      {/* AdSense Ad */}
+      <AdSense />
 
       <section className="services">
         <h2>Our Services</h2>
