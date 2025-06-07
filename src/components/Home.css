@@ -1,0 +1,361 @@
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.white-text {
+  color: white;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  z-index: 999;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-text p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.cta-btn {
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.cta-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Services Section */
+.services {
+  padding: 50px 0;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.services-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.service-item {
+  background: #fff;
+  padding: 20px;
+  margin: 15px;
+  flex-basis: 30%;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon {
+  font-size: 2rem;
+  color: #007BFF;
+  margin-bottom: 10px;
+}
+
+.learn-more {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.learn-more:hover {
+  text-decoration: underline;
+}
+
+.service-item p {
+  text-align: justify;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.service-item h3 {
+  margin-bottom: 15px;
+  color: teal;
+}
+
+/* About Section */
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 5%;
+  background-color: #f0f0f0; /* Light grey background for contrast */
+}
+
+.about-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-image-wrapper {
+  flex: 1;
+  padding-right: 30px;
+}
+
+.about-image {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.about-image:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.about-text {
+  flex: 1;
+  padding-left: 20px;
+  text-align: justify;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: teal; /* Consistent branding color */
+}
+
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #333; /* Improved readability */
+}
+
+.about-btn {
+  background-color: teal;
+  color: #fff;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.about-btn:hover {
+  background-color: #005f5f;
+}
+
+/* Clients Section */
+.clients {
+  padding: 50px 0;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.clients h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.client-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.client-logo {
+  width: 150px;
+  height: 100px;
+  object-fit: contain;
+  margin: 10px;
+  transition: transform 0.3s ease;
+}
+
+.client-logo:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive adjustments for client logos */
+@media screen and (max-width: 768px) {
+  .client-logo {
+    width: 120px;
+    height: 80px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .client-logo {
+    width: 100px;
+    height: 70px;
+  }
+  
+  .client-logos {
+    gap: 15px;
+  }
+}
+
+/* Video Section */
+.video-section {
+  padding: 60px 5%;
+  text-align: center;
+  background-color: teal;
+}
+
+.video-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.video-container {
+  max-width: 1000px;
+  margin: 0 auto 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.youtube-btn {
+  background-color: #FF0000;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.youtube-btn:hover {
+  background-color: #CC0000;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+
+  /* Services Section */
+  .service-item {
+    flex-basis: 100%;
+  }
+
+  /* About Section */
+  .about-content {
+    flex-direction: column;
+  }
+
+  .about-image-wrapper,
+  .about-text {
+    flex: 1;
+    width: 100%;
+    padding: 0;
+  }
+
+  .about-image-wrapper {
+    margin-bottom: 20px;
+  }
+
+  /* Clients Section */
+  .client-logo {
+    max-width: 100px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  /* Services Section */
+  .services h2 {
+    font-size: 2rem;
+  }
+
+  /* About Section */
+  .about-text h2 {
+    font-size: 2rem;
+  }
+
+  /* Clients Section */
+  .clients h2 {
+    font-size: 2rem;
+  }
+
+  .client-logo {
+    max-width: 80px;
+  }
+}
+
+/* Service Icons Colors */
+.service-icon.gis-icon {
+    color: #2196F3; /* Blue */
+}
+
+.service-icon.remote-sensing-icon {
+    color: #4CAF50; /* Green */
+}
+
+.service-icon.software-icon {
+    color: #9C27B0; /* Purple */
+}
+
+.service-icon.cartography-icon {
+    color: #FF5722; /* Deep Orange */
+}
+
+.service-icon.data-science-icon {
+    color: #FFC107; /* Amber */
+}
+
+.service-icon.drone-icon {
+    color: #E91E63; /* Pink */
+}

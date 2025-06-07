@@ -1,0 +1,315 @@
+.services-container {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  min-height: 100vh;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Tab styling */
+.react-tabs__tab-list {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  margin-bottom: 30px;
+  padding: 0;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.react-tabs__tab-list::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.react-tabs__tab {
+  padding: 8px 16px;
+  font-size: 0.9em;
+  font-weight: 500;
+  color: #2c3e50;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.react-tabs__tab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  background: #fff;
+}
+
+.react-tabs__tab--selected {
+  color: #fff;
+  background: linear-gradient(135deg, #008080 0%, #006666 100%);
+  box-shadow: 0 4px 12px rgba(0, 128, 128, 0.3);
+}
+
+.service-content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  margin: 0 20px;
+  gap: 30px;
+  height: calc(100vh - 200px);
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #008080 #f0f0f0;
+}
+
+.service-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.service-content::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 4px;
+}
+
+.service-content::-webkit-scrollbar-thumb {
+  background-color: #008080;
+  border-radius: 4px;
+}
+
+.service-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.service-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  margin: 0;
+}
+
+.service-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.service-details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.service-details h2 {
+  font-size: 2.4em;
+  background: linear-gradient(135deg, #008080 0%, #006666 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+  position: relative;
+  padding-bottom: 15px;
+  font-weight: 700;
+}
+
+.service-details h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(135deg, #008080 0%, #006666 100%);
+  border-radius: 2px;
+}
+
+.service-details h3 {
+  font-size: 1.8em;
+  color: #2c3e50;
+  margin: 0;
+  font-weight: 600;
+}
+
+.service-details p {
+  font-size: 1.15em;
+  color: #34495e;
+  line-height: 1.8;
+  margin: 0;
+  font-weight: 400;
+  text-align: justify;
+}
+
+.service-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.service-details ul li {
+  font-size: 1.15em;
+  color: #34495e;
+  padding-left: 30px;
+  position: relative;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.service-details ul li::before {
+  content: '•';
+  color: #008080;
+  font-size: 1.2em;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.service-details ul li:hover::before {
+  transform: none;
+}
+
+.service-details strong {
+  color: #008080;
+  font-weight: 600;
+}
+
+/* Animation for tab panels */
+.react-tabs__tab-panel {
+  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media query for larger screens */
+@media screen and (min-width: 768px) {
+  .service-content {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 40px;
+  }
+
+  .service-image {
+    width: 45%;
+    height: 500px;
+    position: sticky;
+    top: 20px;
+  }
+
+  .service-details {
+    width: 55%;
+  }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 767px) {
+  .services-container {
+    min-height: auto;
+    overflow: visible;
+    padding: 20px 15px;
+  }
+
+  .react-tabs__tab-list {
+    justify-content: flex-start;
+    padding-bottom: 5px;
+  }
+
+  .react-tabs__tab {
+    padding: 6px 12px;
+    font-size: 0.85em;
+  }
+
+  .service-content {
+    height: auto;
+    overflow-y: visible;
+    margin: 0 10px;
+  }
+
+  .service-image {
+    height: 250px;
+  }
+
+  .service-details h2 {
+    font-size: 1.8em;
+  }
+
+  .service-details h3 {
+    font-size: 1.4em;
+  }
+
+  .service-details p,
+  .service-details ul li {
+    font-size: 1em;
+    text-align: justify;
+  }
+}
+
+/* Small mobile devices */
+@media screen and (max-width: 480px) {
+  .services-container {
+    padding: 15px 10px;
+  }
+
+  .react-tabs__tab {
+    padding: 8px 12px;
+    font-size: 0.85em;
+  }
+
+  .service-content {
+    padding: 15px;
+    margin: 0 5px;
+  }
+
+  .service-image {
+    height: 200px;
+  }
+
+  .service-details h2 {
+    font-size: 1.6em;
+  }
+
+  .service-details h3 {
+    font-size: 1.3em;
+  }
+
+  .service-details p,
+  .service-details ul li {
+    font-size: 0.95em;
+    text-align: justify;
+  }
+}
+
+/* Ensure smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent content jump */
+.service-content > * {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
