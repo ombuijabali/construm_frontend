@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Contact.css';
+import AdSense from './AdSense';
 
 const Contact = () => {
   const [form, setForm] = useState({
@@ -28,6 +29,8 @@ const Contact = () => {
     <main>
       <div className="container mb-6">
         <h2 style={{ color: 'teal' }}>Talk To Us</h2>
+        {/* AdSense Ad */}
+        <AdSense />
         <div className="row">
           <div className="col-md-8">
             {/* Contact Form */}
@@ -125,5 +128,6 @@ const Contact = () => {
     </main>
   );
 };
+
 
 export default Contact;

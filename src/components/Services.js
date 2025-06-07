@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import './Services.css';
+import AdSense from './AdSense';
 
 const Services = () => {
   // Define the mapping between hash fragments and tab indices
@@ -28,7 +29,9 @@ const Services = () => {
 
   return (
     <main className="services-container">
-
+      
+      {/* AdSense Ad */}
+      <AdSense />
       <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
         <TabList>
           <Tab>GIS and Mapping</Tab>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
 import './About.css';
+import AdSense from './AdSense';
 
 const About = () => {
   return (
@@ -10,6 +11,9 @@ const About = () => {
         <h1 className="about-title">Our Company</h1>
         <p className="about-subtitle">The Business of Providing Precision Data</p>
       </div>
+
+      {/* AdSense Ad */}
+      <AdSense />
 
       <div className="row about-content">
         {/* Text Section */}
