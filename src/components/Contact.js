@@ -30,7 +30,7 @@ const Contact = () => {
       <div className="container mb-6">
         <h2 style={{ color: 'teal' }}>Talk To Us</h2>
         {/* AdSense Ad */}
-        //<AdSense />
+
         <div className="row">
           <div className="col-md-8">
             {/* Contact Form */}
