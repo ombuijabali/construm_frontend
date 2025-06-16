@@ -13,7 +13,7 @@ const About = () => {
       </div>
 
       {/* AdSense Ad */}
-      <AdSense />
+      //<AdSense />
 
       <div className="row about-content">
         {/* Text Section */}
