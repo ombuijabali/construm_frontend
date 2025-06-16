@@ -12,8 +12,7 @@ const About = () => {
         <p className="about-subtitle">The Business of Providing Precision Data</p>
       </div>
 
-      {/* AdSense Ad */}
-      //<AdSense />
+      {/* AdSense Ad */}      
 
       <div className="row about-content">
         {/* Text Section */}
