@@ -5,7 +5,7 @@ import './Home.css';
 import AdSense from './AdSense';
 
 const Home = () => {
-  const [latestVideo, setLatestVideo] = useState('qs7GSDrxpDA'); // Default video ID
+  const [latestVideo, setLatestVideo] = useState('_gWG1XRkDG4'); // Default video ID
   const channelId = 'UCYb6v1AlX6oNhgvxWksX4Pw'; // Replace with your actual channel ID
   const apiKey = process.env.REACT_APP_YOUTUBE_API_KEY;
 
