@@ -64,7 +64,7 @@ const Home = () => {
       </section>
 
       {/* AdSense Ad */}
-      <AdSense />
+      //<AdSense />
 
       <section className="services">
         <h2>Our Services</h2>
