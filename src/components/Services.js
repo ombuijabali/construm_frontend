@@ -31,7 +31,7 @@ const Services = () => {
     <main className="services-container">
       
       {/* AdSense Ad */}
-      <AdSense />
+      //<AdSense />
       <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
         <TabList>
           <Tab>GIS and Mapping</Tab>
