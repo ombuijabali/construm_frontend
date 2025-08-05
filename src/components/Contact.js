@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import emailjs from '@emailjs/browser';
 import './Contact.css';
 import AdSense from './AdSense';
 
@@ -11,6 +12,15 @@ const Contact = () => {
     message: '',
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState('');
+
+  // Initialize EmailJS with your public key
+  useEffect(() => {
+    // Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
+    emailjs.init('wvCG083jvYiLTPoIX');
+  }, []);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({
@@ -21,8 +31,41 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', form);
+    setIsSubmitting(true);
+    setSubmitStatus('');
+
+    // Prepare template parameters for EmailJS
+    const templateParams = {
+      to_name: 'Construm Geosystems',
+      from_name: form.name,
+      reply_to: form.email,
+      message: `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phoneNumber}\n\nMessage:\n${form.message}`,
+    };
+
+    // Send email using EmailJS
+    emailjs.send(
+      'service_vmdg8e3', // Service ID
+      'template_orv2kcx', // Template ID
+      templateParams
+    )
+      .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        setSubmitStatus('success');
+        // Clear form after successful submission
+        setForm({
+          name: '',
+          email: '',
+          phoneNumber: '',
+          message: '',
+        });
+      })
+      .catch((err) => {
+        console.log('FAILED...', err);
+        setSubmitStatus('error');
+      })
+      .finally(() => {
+        setIsSubmitting(false);
+      });
   };
 
   return (
@@ -83,7 +126,25 @@ const Contact = () => {
                   required
                 ></textarea>
               </div>
-              <button type="submit" className="btn btn-primary">Submit</button>
+              <button 
+                type="submit" 
+                className="btn btn-primary" 
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? 'Sending...' : 'Submit'}
+              </button>
+              
+              {/* Status Messages */}
+              {submitStatus === 'success' && (
+                <div className="alert alert-success mt-3" role="alert">
+                  Thank you! Your message has been sent successfully. We'll get back to you soon.
+                </div>
+              )}
+              {submitStatus === 'error' && (
+                <div className="alert alert-danger mt-3" role="alert">
+                  Sorry, there was an error sending your message. Please try again or contact us directly.
+                </div>
+              )}
             </form>
           </div>
           <div className="col-md-4">
